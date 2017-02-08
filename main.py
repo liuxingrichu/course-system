@@ -24,7 +24,8 @@ def manage():
             grade = input("Enter grade name: ").strip()
             school_obj.create_grade(grade, teacher)
         elif choice == "3":
-            course,period,price = input("linux|7 months|7000: ").strip().split("|")
+            print("\t请输入课程名称、周期和价格，以“|”分割，例如：linux|7 months|7000")
+            course,period,price = input(">>").strip().split("|")
             school_obj.create_course(course, period, price)
             common.Course.cat_course(school_obj)
         elif choice == "4":
@@ -59,7 +60,7 @@ def teacher():
         elif choice == "4":
             break
         else:
-            print("\t\033[0;31m%s 请输入正常选项！\033[0m" % std.name)
+            print("\t\033[0;31m%s 请输入正常选项！\033[0m" % teacher_obj.name)
             continue
 
 
@@ -112,6 +113,7 @@ def main():
         elif choice == "4":
             break
         else:
+            print("\t\033[0;31m请输入正常选项！\033[0m")
             continue
 
 
